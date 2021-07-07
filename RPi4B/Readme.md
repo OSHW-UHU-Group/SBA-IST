@@ -3,6 +3,10 @@
 
 Raspberry Pi 4 B (RPi4B) is a Single Board Computer with an Broadcom BCM2711, Quad core Cortex-A72 (ARM v8) 64-bit, 4GB RAM and WiFi and BLE (Bluetooth 5.0) capacities. It can run Raspberry Pi OS (Linux OS derivative).
 
+## Pinout
+
+<img src="../images/RaspberryPi-Pinout-Diagram-2.png" alt="Raspberry Pi Pinout">
+<p>Source: raspberrypi.org</p>
 
 ## DS18B20 Sensor
 

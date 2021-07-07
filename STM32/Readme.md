@@ -2,6 +2,10 @@
 
 STM32F103C8T6 (STM32) is a single-board with a Arm Cortex-M3 microcontroller manufactured by ST-Microelectronics, 64 Kb of Flash and 20 Kb of SRAM, 15 PWM Pins, 10 Analog Channels of 12-bit ADC, 2 I2C, 3 USART and 2 SPI buses.
 
+## Pinout
+
+<img src="../images/STM32F103_BluePill.png" alt="STM32F103 Pinout">
+<p>Source: stm32duinoforum.com</p>
 
 ## DS18B20 Sensor
 

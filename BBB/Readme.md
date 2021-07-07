@@ -2,7 +2,10 @@
 
 BeagleBone Black (BBB) Wireless is an open source board with a Sitara AM335x MPU 1GHz ARM® Cortex-A8 processor, 512MB DDR3 RAM, 4GB Embedded eMMC Flash with Debian Distribution and Wi-Fi (802.11b/g/n) and BLE  (Bluetooth 4.1) Connectivities.
 
+## Pinout
 
+<img src="../images/BeagleBoneBlack_pinout.png" alt="BeagleBone Black Pinout">
+<p>Source: beagleboard.com</p>
 
 ## DS18B20 Sensor
 

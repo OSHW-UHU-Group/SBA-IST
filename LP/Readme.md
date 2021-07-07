@@ -2,6 +2,10 @@
 
 LattePanda 2G/32G (LP) is a Single Board Computer with an Intel Quad Core 1.8GHz processor, 2GB RAM and 32GB onboard flash memory. It has WiFi and Bluetooth 4.0 capacities, a built-in Arduino Leonardo (ATmega32u4) and it can run a full version of Windows 10.
 
+## Pinout
+
+<img src="../images/LattePanda2g-32g_pinout.png" alt="LattePanda 2G/32G Pinout">
+<p>Source: lattepanda.com</p>
 
 ## DS18B20 Sensor
 
