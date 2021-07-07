@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
+    <title>Monitoring Home</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="jumbotron">
+            <h1 class="display-4">Monitoring Home</h1>
+
+                <div class="form-group">
+                    <p>
+                      <label for="">URL Web Service</label>
+                      <input type="URL" class="form-control" id="url" aria-describedby="url" placeholder="Enter URL Web Services">
+                    </p>
+                    <p id="startstop" class="btn btn-primary btn-lg" href="#" role="button" onclick="start()">Start</p>
+                </div>
+
+        </div>
+
+
+        <div class="row">
+
+            <div class="col" style="margin: 5px; border: 2px solid rgb(33, 33, 209)">
+
+                <div style="text-align: center;">
+                    <h3>Temperature</h3>
+                    <img src="images/temperature.jpg" width="88" height="132">
+                    <p style="font-size:120%;">
+                        <span id="temperature">24.2</span> ºC
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col" style="margin: 5px; border: 2px solid rgb(33, 33, 209)">
+
+                <div style="text-align: center;">
+                    <h3>Humidity</h3>
+                    <img src="images/humidity.jpg" width="120" height="132">
+                    <p style="font-size:120%;">
+                        <span id="humidity">60.2</span> %
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="col" style="margin: 5px; border: 2px solid rgb(33, 33, 209)">
+
+                <div style="text-align: center;">
+                    <h3>Pressure</h3>
+                    <img src="images/pressure.jpg" width="88" height="132">
+                    <p style="font-size:120%;">
+                        <span id="pressure">980.5</span> hPa
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <p></p>
+        <p></p>
+        <p></p>
+
+        <div class="row">
+            <div class="col-6">
+
+                <div class="col-12" style="min-height: 210px; margin: 5px; border: 2px solid rgb(33, 33, 209)">
+                    <div class="row" style="text-align: center;">
+                        <h3>Air Quality</h3>
+                    </div>
+
+                    <div class="row" style="text-align: center;">
+                        <div class="col-6" style="text-align: center;">
+                            <img src="images/airquality.jpg">
+                        </div>
+                        <div class="col-6" style="text-align: center;">
+                            <p style="font-size:120%;">
+                                CO2: <span id="co2">400</span> ppm
+                            </p>
+                            <p style="font-size:120%;">
+                                TVOC: <span id="tvoc">10</span> ppm
+                            </p>
+                            <p style="font-size:120%;">
+                                CO: <spa id="co">8.2</span> ppm
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6" style="text-align: center;">
+                <div class="col-12" style="min-height: 210px; margin: 5px; border: 2px solid rgb(33, 33, 209)">
+                    <div class="row" style="text-align: center;">
+                        <h3>Ambient Light</h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-6" style="text-align: center;">
+                            <img src="images/ambientlight.jpg">
+                        </div>
+                        <div class="col-6">
+                            <p></p>
+                            <p class="display-6">
+                                <span id="ambientlight">300</span> lux
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        var init;
+        var url;
+
+        function start() {
+            url = document.getElementById("url").value;
+            if (url != "") {
+                init = setInterval(readSensors, 10000);
+                let boton = document.getElementById("startstop");
+                boton.innerText = "Stop";
+                boton.onclick = stop;
+            } else {
+                alert("Insert URL Web Service.")
+            }
+        }
+
+        function stop() {
+            clearInterval(init);
+            let boton = document.getElementById("startstop");
+            boton.innerText = "Start";
+            boton.onclick = start;
+        }
+
+        var xhr;
+
+        function readSensors(sensor = 'all', register = 1) {
+
+            xhr = new XMLHttpRequest();
+
+            xhr.open("GET", url, true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4) {
+                    if (xhr.status === 200) {
+                        let data = JSON.parse(xhr.responseText);
+                        console.log(xhr.responseText);
+                        let t = document.getElementById("temperature");
+                        t.innerText = data.Temperature;
+
+                        let h = document.getElementById("humidity");
+                        h.innerText = data.Humidity;
+
+                        let p = document.getElementById("pressure");
+                        p.innerText = data.Pressure;
+
+                        let co2 = document.getElementById("co2");
+                        co2.innerText = data.CO2;
+
+                        let tvoc = document.getElementById("tvoc");
+                        tvoc.innerText = data.TVOC;
+
+                        let co = document.getElementById("co");
+                        co.innerText = data.CO;
+
+                        let al = document.getElementById("ambientlight");
+                        al.innerText = data.AmbientLight;
+                    } else {
+                        console.error("ERROR: Petición no comlpetada");
+                    }
+                }
+            };
+
+
+            xhr.send();
+        }
+    </script>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
