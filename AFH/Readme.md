@@ -108,4 +108,52 @@ SDA - AFH IO4
 
 ADD - (none)  --> Addr: 0x23
 
+
  
+## Additional Modules
+
+### HM10 Bluetooth 4.0 (BLE)
+
+The HM-10 is a Bluetooth Low Energy (BLE, Bluetooth 4.0) module based on the CC2541 chip from Texas Instruments. This module provides to SBA the BLE capability via Serial port.
+
+
+<img src="../images/hm10_1.jpg" width="15%" alt="HM10 Pinout_1"> <img src="../images/hm10_2.jpg" width="15%" alt="HM10 Pinout_2">
+
+VCC - 3.3V
+
+GND - GND
+
+TX - AFH IO3 (RX)
+
+RX - AFH IO1 (TX)
+
+STATE - (none)
+
+BRK - (none)
+
+
+### Voltage Divider 3.3V to 1.0V
+
+A voltage divider is a circuit with resistors un series that translates an input voltage (Vin) to an output one (Vout). For example, with two resistors in series (R1 and R2) an input voltage (3.3V) can be translate to an output voltage (1.0V) where R1/R2 = 2.3.
+
+´´´
+R1 = 2.3 * R2
+´´´
+
+<img src="../images/voltagedivider.jpg" width="15%" alt="Voltage Divider">
+ 
+ ### microSD Adapter
+
+<img src="../images/microsd_1.jpg" width="15%" alt="HM10 Pinout_1"> <img src="../images/microsd_2.jpg" width="15%" alt="HM10 Pinout_2">
+
+VCC - 3.3V
+
+GND - GND
+
+SCK - AFH IO14
+
+MOSI - AFH IO13
+
+CS - AFH IO15
+
+MISO - AFH IO12

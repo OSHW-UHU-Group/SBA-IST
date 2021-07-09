@@ -108,3 +108,12 @@ SDA - LP SDA (D2)
 ADD - (none)  --> Addr: 0x23
 
  
+ 
+## Additional Modules
+
+### Level Shifter 5V to 3.3V
+
+A level shifter is a module that translates signals from one logic voltage, for example 5V, to another, for example 3.3V, and vice versa.
+
+<img src="../images/levelshifter.jpg" width="10%" alt="Level Shifter">
+

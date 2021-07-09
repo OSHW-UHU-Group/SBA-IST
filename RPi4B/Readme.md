@@ -88,14 +88,14 @@ GND - GND
 
 D0 - (none)
 
-A0 -  ADS.P0  - (I2C: ADS.SCL - GPIO3. ADS.SDA - GPIO2) -- ADS1115 (ADS) Analog-Digital converter is need.
+A0 -  ADS A0  - (I2C: ADS.SCL - GPIO3. ADS.SDA - GPIO2) -- ADS1115 (ADS) Analog-Digital converter is need.
 
 
 ## BH1750 Sensor
 
 The BH1750 is a sensor for luminous flux (lux) measurement. It can be connected via I2C bus using one of its address (0x23).
 
-<img src="../images/bh1750_1.jpg" width="20%" alt="BH1750 Pinout_1"> <img src="../images/bh1750_2.jpg" width="20%" alt="BH1750 Pinout_2">
+<img src="../images/bh1750_1.jpg" width="15%" alt="BH1750 Pinout_1"> <img src="../images/bh1750_2.jpg" width="15%" alt="BH1750 Pinout_2">
 
 
 VCC - 3.3V
@@ -109,5 +109,32 @@ SDA - RPi4B Serial Data GPIO2 (I2C)
 ADD - (none)   -->  Addr: 0x23
 
  
+## Additional Modules
 
 
+### ADS1115 ADC
+
+The ADS1115 (ADS) module is an analog-to-digital converter (ADC) of 4 input channels that provides 16-bit precision over I2C. 
+
+
+<img src="../images/ads1115.jpg" width="20%" alt="ADS1115 Pinout_1">
+
+VCC - 3.3V
+
+GND - GND
+
+SCL - RPi4B Serial Clock GPIO3 (I2C)
+
+SDA - RPi4B Serial Data GPIO2 (I2C)
+
+ADDR - (none)   -->  Addr: 0x48
+
+ALRT - (none)
+
+A0 - MQ7 A0
+
+A1 - (none)
+
+A2 - (none)
+
+A3 - (none)

@@ -108,3 +108,17 @@ SDA - BBB P9_20 (I2C2_SDA)
 ADD - (none)  --> Addr: 0x23
 
  
+ 
+## Additional Components
+
+
+### Voltage Divider 3.3V to 1.8V
+
+A voltage divider is a circuit with resistors un series that translates an input voltage (Vin) to an output one (Vout). For example, with two resistors in series (R1 and R2) an input voltage (3.3V) can be translate to an output voltage (1.8V) where R1/R2 = 0.83.
+
+´´´
+R1 = 0.83 * R2
+´´´
+
+<img src="../images/voltagedivider.jpg" width="15%" alt="Voltage Divider">
+

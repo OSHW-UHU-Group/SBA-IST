@@ -1,6 +1,6 @@
 # Arduino Nano 33 BLE
 
-The Arduino Nano 33 BLE (AN33BLE) is 3.3V compatible board with nRF52840 processor from Nordic Semiconductors, a 32-bit ARM® Cortex™-M4 CPU, and Bluetoth Low Energy (BLE) capacity.
+The Arduino Nano 33 BLE (AN33BLE) is 3.3V compatible board with nRF52840 processor from Nordic Semiconductors, a 32-bit ARM® Cortex™-M4 CPU, and Bluetooth Low Energy (BLE) capacity.
 
 ## Pinout
 
@@ -97,7 +97,7 @@ A0 - AN33BLE P0_4 (A0)
 
 The BH1750 is a sensor for luminous flux (lux) measurement. It can be connected via I2C bus using one of its address (0x23).
 
-<img src="../images/bh1750_1.jpg" width="20%" alt="BH1750 Pinout_1"> <img src="../images/bh1750_2.jpg" width="20%" alt="BH1750 Pinout_2">
+<img src="../images/bh1750_1.jpg" width="15%" alt="BH1750 Pinout_1"> <img src="../images/bh1750_2.jpg" width="15%" alt="BH1750 Pinout_2">
 
 
 VCC - 3.3V
@@ -111,3 +111,38 @@ SDA - AN33BLE P0_31 (A4)
 ADD - (none)  --> Addr: 0x23
 
  
+## Additional Modules
+
+### ESP01
+
+The ESP-01 module integrates an ESP8266 SoC with Wi-Fi capacity that allows SBA access to a Wi-Fi network via Serial.
+
+<img src="../images/esp01_1.jpg" width="10%" alt="ESP01 Pinout_1"> <img src="../images/esp01_2.jpg" width="10%" alt="ESP01 Pinout_2">
+
+VCC - 3.3V
+
+GND - GND
+
+TX - AN33BLE P1_10 (RX)
+
+RX - AN33BLE P1_3 (TX)
+
+STATE - (none)
+
+BRK - (none)
+
+### microSD Adapter
+
+<img src="../images/microsd_1.jpg" width="15%" alt="HM10 Pinout_1"> <img src="../images/microsd_2.jpg" width="15%" alt="HM10 Pinout_2">
+
+VCC - 3.3V
+
+GND - GND
+
+SCK -  AN33BLE P0_13 (D13)
+
+MOSI - AN33BLE P1_1 (D11)
+
+CS - AN33BLE P0_21 (D8)
+
+MISO - AN33BLE P1_8 (D12)
