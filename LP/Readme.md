@@ -94,7 +94,7 @@ A0 - LP A0 (D14)
 
 The BH1750 is a sensor for luminous flux (lux) measurement. It can be connected via I2C bus using one of its address (0x23).
 
-<img src="../images/bh1750_1.jpg" width="20%" alt="BH1750 Pinout_1"> <img src="../images/bh1750_2.jpg" width="20%" alt="BH1750 Pinout_2">
+<img src="../images/bh1750_1.jpg" width="15%" alt="BH1750 Pinout_1"> <img src="../images/bh1750_2.jpg" width="15%" alt="BH1750 Pinout_2">
 
 
 VCC - 3.3V
