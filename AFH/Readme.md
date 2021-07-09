@@ -136,9 +136,9 @@ BRK - (none)
 
 A voltage divider is a circuit with resistors un series that translates an input voltage (Vin) to an output one (Vout). For example, with two resistors in series (R1 and R2) an input voltage (3.3V) can be translate to an output voltage (1.0V) where R1/R2 = 2.3.
 
-´´´
+```
 R1 = 2.3 * R2
-´´´
+```
 
 <img src="../images/voltagedivider.jpg" width="15%" alt="Voltage Divider">
  
